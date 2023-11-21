@@ -1,10 +1,25 @@
-import { envioMail, sendMail } from "./envioMail.js";
+import { privateKey, publicKey, serviceID, templateID } from "./config-form.js";
 
-const form = document.getElementById("contact-form");
-const submit = document.getElementById("button");
+const btn = document.getElementById("button");
 
-submit.addEventListener("click", (e) => {
-  e.preventDefault();
-  const formData = new formData(form, submit);
-  sendMail(formData);
-});
+emailjs.init(publicKey);
+window.onload = function () {
+  document.getElementById("form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    emailjs.sendForm(serviceID, templateID, this).then(
+      () => {
+        alert("Mensaje enviado correctamente!");
+        resetFormulario();
+      },
+      (err) => {
+        console.log(err);
+        alert(JSON.stringify(err));
+      }
+    );
+  });
+};
+
+function resetFormulario() {
+  document.getElementById("form").reset();
+}

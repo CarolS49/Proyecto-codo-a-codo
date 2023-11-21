@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JD Masajes/Formulario</title>
+    <title>JD Masajes/Formulario de contacto</title>
     <!--favicon-->
-    <link rel="shortcut icon" href="./assets/media/icons/flor-loto.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/media/icons/flor-loto.svg" type="image/x-icon">
 
     <!--css normalize-->
     <link rel="stylesheet" href="../assets/css/normalize.css">
@@ -26,81 +26,55 @@
 
     <!--Etiqueta meta para dispositivos móviles-->
     <meta name="theme-color" content="#49494b">
+
+    <!--recapcha de google-->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 
 
 <div class="container">
 
-    <div class="container__formulario">
-
-        <form action="https://formspree.io/f/{form_id}" method="POST" class="row g-3 mt-3 formulario" id="contact-form">
-
-            <h2 class="formulario__title">Formulario de Registro</h2>
-
-            <div class="row mb-3">
-                <label for="nombre" class=" col-2 col-form-label">Nombre:</label>
-                <div class="col-10">
-                    <input type="text" name="user_name" class="form-control" id="name"
-                        placeholder="Escribe tu nombre completo" required>
-                </div>
-
+    <div class="row content">
+        <h1 class="formulario__title">Formulario de Contacto JD Masajes</h1>
+        <form class="container__formulario" action="?" id="form"
+            method="POST https://api.emailjs.com/api/v1.0/email/send">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre: </label>
+                <input type="text" class="form-control" id="name" name="name"
+                    placeholder="Ingrese su nombre y apellido..." required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo: </label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su email..."
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-check-label">Mensaje: </label>
+                <textarea type="text" class="form-control" id="message" name="message"
+                    placeholder="Escriba aca su mensaje"></textarea>
             </div>
 
-            <div class="row mb-3">
-                <label for="email" class=" col-2 col-form-label">Email:</label>
-                <div class="col-10">
-                    <input type="email" name="user_mail" class="form-control" id="email" placeholder="Escribe tu email"
-                        required>
-                </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <input type="submit" id="button" class="btn btn-primary cta__formulario" value="Enviar"></input>
+                <a href="../index.html" class="btn btn-primary cta__formulario">Volver</a>
             </div>
 
-            <div class="row mb-3">
-                <label for="mailSubject" class=" col-2 col-form-label">Asunto</label>
-                <div class="col-10">
-                    <input type="text" name="mailSubject" class="form-control" id="mailSubject"
-                        placeholder="Escribe aca" required>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-
-                <label for="message" class="col-2 col-form-label">Mensaje</label>
-                <div class="col-10">
-                    <textarea class="form-control" placeholder="Escribe aquí tu mensaje" required id="message"
-                        name="message"></textarea>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-12">
-                    <div class="form-check">
-                        <input type="checkbox" name="checkbox" class="form-check-input" id="checkTerms">
-                        <label for="checkTerms" class="form-check-label">Acepto los términos y condiciones</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12">
-                <input type="submit" class="cta__formulario" id="button" value="Enviar mensaje"></input>
-            </div>
-
+            <script type="text/javascript"
+                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         </form>
-
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script src="../assets/js/index.js" type="module"></script>
-        <script src="https://cdn.emailjs.com/sdk/2.6.4/email.min.js"></script>
-        <script src="../assets/js/formulario.js"></script>
     </div>
+
 </div>
-
-
-<!-- Script con la validación del formulario -->
-
 
 <!--Bootstrap-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
+
+<script src="../assets/js/index.js" type="module"></script>
+
+
 
 </body>
 

@@ -11,12 +11,16 @@
     "hemiplejías",
     "linfedemas",
     "masoterapia",
+    "mgnp",
     "musculoesqueléticas",
     "oxigenandolos",
+    "ozwmx",
     "quiropraxia",
     "radiculopatías",
+    "Registrate",
     "reposicionar",
     "tendinopatías"
   ],
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5502,
+  "workbench.colorCustomizations": {}
 }
